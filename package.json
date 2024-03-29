@@ -7,16 +7,29 @@
   "author": "J. Lewis <contact@lewx.dev> (https://lewx.dev)",
   "repository": "github:lewxdev/lewx.dev",
   "scripts": {
+    "prepare": "husky",
+    "lint": "eslint '**/*.{astro,js,ts}'",
+    "format": "prettier --write .",
     "dev": "astro dev",
     "preview": "astro preview",
-    "prebuild": "astro check",
+    "prebuild": "astro check && bun lint",
     "build": "astro build"
   },
   "dependencies": {
     "astro": "^4.5.12"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.5.10"
+    "@astrojs/check": "^0.5.10",
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@eslint/js": "^8.57.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-astro": "^0.33.1",
+    "husky": "^9.0.11",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0"
   },
   "peerDependencies": {
     "typescript": "^5.4.3"

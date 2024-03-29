@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+prefix=[$(basename "$0")]
+echo "$prefix ..."
+
+staged_files=$(git diff --cached --name-only | sed "s| |\\ |g")
+
+if [ -n "$staged_files" ]; then
+  bun run eslint --cache --fix --no-warn-ignored $staged_files
+  bun run prettier --cache --ignore-unknown --write $staged_files
+  git add $staged_files
+else
+  echo "$prefix no staged files."
+fi
+
+echo "$prefix done."

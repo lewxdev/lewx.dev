@@ -1,0 +1,11 @@
+{
+  // see: https://docs.astro.build/guides/typescript
+  "extends": "astro/tsconfigs/strictest",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "verbatimModuleSyntax": true
+  }
+}

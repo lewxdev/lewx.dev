@@ -1,0 +1,32 @@
+{
+  "name": "lewx.dev",
+  "version": "0.1.0",
+  "description": "The source code for my personal website",
+  "homepage": "https://lewx.dev",
+  "license": "MIT",
+  "author": "J. Lewis <contact@lewx.dev> (https://lewx.dev)",
+  "repository": "github:lewxdev/lewx.dev",
+  "scripts": {
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "prebuild": "astro check",
+    "build": "astro build"
+  },
+  "dependencies": {
+    "astro": "^4.5.12"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.5.10"
+  },
+  "peerDependencies": {
+    "typescript": "^5.4.3"
+  },
+  "engines": {
+    "bun": "^1.0.23",
+    "npm": "use bun",
+    "cnpm": "use bun",
+    "pnpm": "use bun",
+    "yarn": "use bun"
+  },
+  "private": true
+}

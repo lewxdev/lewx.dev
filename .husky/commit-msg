@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+prefix=[$(basename "$0")]
+echo "$prefix ..."
+
+bun run commitlint --edit $1
+
+echo "$prefix done."

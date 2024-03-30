@@ -8,8 +8,10 @@
       </a>
 
       <div class="flex items-center gap-6 text-gray-600 dark:text-gray-300">
-        <!-- TODO: menu button -->
-        <button class="flex h-8 w-8 items-center justify-center sm:hidden">
+        <button
+          class="flex h-8 w-8 items-center justify-center sm:hidden"
+          id="mobile-menu"
+        >
           <i class="bx bx-menu text-xl"></i>
         </button>
 
@@ -28,8 +30,38 @@
         </button>
       </div>
     </nav>
+    <nav
+      class="fixed z-50 w-0 overflow-x-hidden bg-gray-50 text-gray-600 transition-all dark:bg-gray-950 dark:text-gray-300"
+      id="side-nav"
+    >
+      <div class="flex h-dvh flex-col text-lg">
+        <a class="p-6" href="#">about</a>
+        <a class="p-6" href="#">projects</a>
+        <a class="p-6" href="#">blog</a>
+        <a class="p-6" href="#">contact</a>
+      </div>
+    </nav>
   </body>
 </html>
+
+<script is:inline>
+  const MOBILE_MENU_ID = "mobile-menu";
+  const SIDE_NAV_ID = "side-nav";
+
+  const mobileMenu = document.getElementById(MOBILE_MENU_ID);
+  const sideNav = document.getElementById(SIDE_NAV_ID);
+
+  if (!mobileMenu || !sideNav)
+    throw new Error(`missing "#${MOBILE_MENU_ID}" or "#${SIDE_NAV_ID}"`);
+
+  const toggleVisibility = () => {
+    sideNav.classList.replace("w-0", "w-dvw") ||
+      sideNav.classList.replace("w-dvw", "w-0");
+  };
+
+  mobileMenu.addEventListener("click", toggleVisibility);
+  sideNav.addEventListener("click", toggleVisibility);
+</script>
 
 <script is:inline>
   const TOGGLE_ID = "toggle-id";

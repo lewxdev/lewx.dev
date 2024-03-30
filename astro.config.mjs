@@ -5,4 +5,12 @@ import { defineConfig } from "astro/config";
 
 export default defineConfig({
   integrations: [tailwind()],
+  markdown: {
+    shikiConfig: {
+      themes: {
+        dark: "aurora-x",
+        light: "min-light",
+      },
+    },
+  },
 });

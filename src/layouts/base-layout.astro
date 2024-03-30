@@ -1,0 +1,42 @@
+---
+import "@fontsource/geist-mono";
+import "@fontsource/geist-sans";
+import "boxicons/css/boxicons.min.css";
+
+import Navbar from "@/components/navbar.astro";
+import Footer from "@/components/footer.astro";
+
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="favicon.svg" rel="icon" type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+
+  <body class="flex min-h-dvh flex-col bg-white dark:bg-gray-950">
+    <Navbar />
+    <main class="prose flex-1 p-6 dark:prose-invert sm:mx-auto">
+      <h1>{title}</h1>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  @media (prefers-color-scheme: dark) {
+    .astro-code,
+    .astro-code span {
+      background-color: var(--shiki-dark-bg) !important;
+      color: var(--shiki-dark) !important;
+    }
+  }
+</style>

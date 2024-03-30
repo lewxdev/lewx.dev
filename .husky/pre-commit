@@ -3,7 +3,7 @@
 prefix=[$(basename "$0")]
 echo "$prefix ..."
 
-staged_files=$(git diff --cached --name-only | sed "s| |\\ |g")
+staged_files=$(git diff --cached --diff-filter=ACMR --name-only | sed "s| |\\ |g")
 
 if [ -n "$staged_files" ]; then
   bun run eslint --cache --fix --no-warn-ignored $staged_files

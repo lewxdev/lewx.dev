@@ -23,11 +23,42 @@
 
         <div class="h-8 w-[1px] bg-gray-400 dark:bg-gray-500"></div>
 
-        <!-- TODO: theme toggle -->
-        <button class="flex h-8 w-8 items-center justify-center">
+        <button class="flex h-8 w-8 items-center justify-center" id="toggle-id">
           <i class="bx bx-moon text-xl"></i>
         </button>
       </div>
     </nav>
   </body>
 </html>
+
+<script is:inline>
+  const TOGGLE_ID = "toggle-id";
+  const INIT = "init";
+  const TOGGLE = "toggle";
+  const DARK = "dark";
+  const LIGHT = "light";
+
+  const button = document.getElementById(TOGGLE_ID);
+  const icon = button?.querySelector("i");
+  if (!button || !icon) throw new Error(`missing "#${TOGGLE_ID}" or its icon`);
+
+  const getValue = () =>
+    /** @type {DARK | LIGHT | undefined} */
+    (localStorage?.getItem(TOGGLE_ID)?.match(`^${DARK}|${LIGHT}$`)?.at(0));
+
+  /** @param {INIT | TOGGLE} action */
+  const setValue = (action) => {
+    const value = getValue() || (prefersDark.matches ? DARK : LIGHT);
+    const newValue = action === INIT ? value : value === DARK ? LIGHT : DARK;
+
+    document.documentElement.classList.toggle(DARK, newValue === DARK);
+    icon.className = `bx ${newValue === DARK ? "bx-sun" : "bx-moon"} text-xl`;
+    if (action === TOGGLE) localStorage?.setItem(TOGGLE_ID, newValue);
+  };
+
+  const prefersDark = matchMedia("(prefers-color-scheme: dark)");
+
+  prefersDark.addEventListener("change", () => !getValue() && setValue(INIT));
+  button.addEventListener("click", () => setValue(TOGGLE));
+  setValue(INIT);
+</script>

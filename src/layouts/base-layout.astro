@@ -32,11 +32,9 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
-  @media (prefers-color-scheme: dark) {
-    .astro-code,
-    .astro-code span {
-      background-color: var(--shiki-dark-bg) !important;
-      color: var(--shiki-dark) !important;
-    }
+  .dark .astro-code,
+  .dark .astro-code span {
+    background-color: var(--shiki-dark-bg) !important;
+    color: var(--shiki-dark) !important;
   }
 </style>

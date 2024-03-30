@@ -1,8 +1,7 @@
 ---
-layout: "@/layouts/blog-layout.astro"
 title: "My first blog post"
 date: 2024.03.29
-slug: "blog/my-first-blog-post"
+slug: "my-first-blog-post"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

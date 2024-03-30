@@ -8,7 +8,7 @@
   "repository": "github:lewxdev/lewx.dev",
   "scripts": {
     "prepare": "husky",
-    "lint": "eslint '**/*.{astro,js,ts}'",
+    "lint": "eslint '**/*.{astro,js,ts}' --ignore-pattern '**/{.astro,dist}/**'",
     "format": "prettier --write .",
     "dev": "astro dev",
     "preview": "astro preview",

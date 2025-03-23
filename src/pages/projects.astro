@@ -7,30 +7,22 @@ const repos = ["subify", "vscode-glyph", "dotfiles", "lewx.dev"];
 
 const results = await Promise.all(
   repos.map(async (repo) => {
-    const options = {
+    const { data } = await request("GET /repos/{owner}/{repo}", {
       owner,
       repo,
-      headers: {
-        authorization: `token ${import.meta.env.GITHUB_TOKEN}`,
-      },
-    };
-
-    const { data: repoData } = await request(
-      "GET /repos/{owner}/{repo}",
-      options,
-    );
+    });
 
     const { data: languages } = await request(
       "GET /repos/{owner}/{repo}/languages",
-      options,
+      { owner, repo },
     );
 
     return {
-      name: repoData.name,
-      description: repoData.description,
-      pushedAt: repoData.pushed_at,
+      name: data.name,
+      description: data.description,
+      pushedAt: data.pushed_at,
+      url: data.html_url,
       languages: Object.keys(languages).slice(0, 3),
-      url: repoData.html_url,
     };
   }),
 );

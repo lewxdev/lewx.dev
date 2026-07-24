@@ -1,6 +1,4 @@
-// learn more: https://astro.build/config
-
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders } from "astro/config";
 
 export default defineConfig({
@@ -20,7 +18,6 @@ export default defineConfig({
       fallbacks: ["monospace"],
     },
   ],
-  integrations: [tailwind()],
   markdown: {
     shikiConfig: {
       themes: {
@@ -28,5 +25,8 @@ export default defineConfig({
         light: "min-light",
       },
     },
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
 });

@@ -16,10 +16,10 @@
     "build": "astro build"
   },
   "dependencies": {
-    "@astrojs/tailwind": "6.0.2",
+    "@tailwindcss/vite": "^4.3.3",
     "astro": "7.1.3",
     "boxicons": "^2.1.4",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.9",
@@ -27,15 +27,15 @@
     "@commitlint/config-conventional": "^19.1.0",
     "@eslint/js": "^8.57.0",
     "@octokit/request": "^9.0.1",
-    "@tailwindcss/typography": "^0.5.12",
+    "@tailwindcss/typography": "^0.5.20",
     "@typescript-eslint/parser": "^8.65.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-astro": "^0.33.1",
     "husky": "^9.0.11",
-    "prettier": "^3.2.5",
+    "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.13.0",
-    "prettier-plugin-tailwindcss": "^0.5.13",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "typescript": "^6.0.3"
   },
   "engines": {

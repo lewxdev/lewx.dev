@@ -1,3 +1,9 @@
+---
+import MenuIcon from "@boxicons/core/svg/basic/bx-menu.svg";
+import MoonIcon from "@boxicons/core/svg/basic/bx-moon.svg";
+import SunIcon from "@boxicons/core/svg/basic/bx-sun.svg";
+---
+
 <html>
   <body>
     <nav
@@ -12,7 +18,7 @@
           class="flex h-8 w-8 items-center justify-center sm:hidden"
           id="mobile-menu"
         >
-          <i class="bx bx-menu text-xl"></i>
+          <MenuIcon class="size-5" fill="currentColor" />
         </button>
 
         <!-- TODO: links -->
@@ -26,7 +32,12 @@
         <div class="h-8 w-[1px] bg-gray-400 dark:bg-gray-500"></div>
 
         <button class="flex h-8 w-8 items-center justify-center" id="toggle-id">
-          <i class="bx bx-moon text-xl"></i>
+          <MoonIcon class="size-5 dark:hidden" fill="currentColor" />
+          <SunIcon
+            class="hidden size-5 dark:block"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          />
         </button>
       </div>
     </nav>
@@ -71,8 +82,7 @@
   const LIGHT = "light";
 
   const button = document.getElementById(TOGGLE_ID);
-  const icon = button?.querySelector("i");
-  if (!button || !icon) throw new Error(`missing "#${TOGGLE_ID}" or its icon`);
+  if (!button) throw new Error(`missing "#${TOGGLE_ID}"`);
 
   const getValue = () =>
     /** @type {DARK | LIGHT | undefined} */
@@ -84,7 +94,6 @@
     const newValue = action === INIT ? value : value === DARK ? LIGHT : DARK;
 
     document.documentElement.classList.toggle(DARK, newValue === DARK);
-    icon.className = `bx ${newValue === DARK ? "bx-sun" : "bx-moon"} text-xl`;
     if (action === TOGGLE) localStorage?.setItem(TOGGLE_ID, newValue);
   };
 

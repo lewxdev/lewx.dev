@@ -1,10 +1,24 @@
 // learn more: https://astro.build/config
 
-import tailwind from "@astrojs/tailwind";
-import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig, fontProviders } from "astro/config";
 
 export default defineConfig({
-  integrations: [tailwind()],
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: "Geist",
+      cssVariable: "--font-geist",
+      styles: ["normal"],
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: "Geist Mono",
+      cssVariable: "--font-geist-mono",
+      styles: ["normal"],
+      fallbacks: ["monospace"],
+    },
+  ],
   markdown: {
     shikiConfig: {
       themes: {
@@ -12,5 +26,8 @@ export default defineConfig({
         light: "min-light",
       },
     },
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
 });

@@ -1,10 +1,15 @@
+---
+import GitHubIcon from "@boxicons/core/svg/brands/bx-github.svg";
+import LinkedInIcon from "@boxicons/core/svg/brands/bx-linkedin.svg";
+---
+
 <html>
   <body>
     <footer
       class="flex h-20 items-center justify-between bg-gray-50 px-6 text-gray-600 dark:bg-gray-950 dark:text-gray-300"
     >
       <p>
-        <span class="max-sm:hidden">Copyright</span>
+        <span class="max-sm:hidden">Copyright{" "}</span>
         &copy; {new Date().getUTCFullYear()}
       </p>
 
@@ -14,14 +19,18 @@
           href="https://github.com/lewxdev"
           target="_blank"
         >
-          <i class="bx bxl-github"></i>
+          <GitHubIcon class="size-5" fill="currentColor" viewBox="0 0 24 24" />
         </a>
         <a
           class="flex h-8 w-8 items-center justify-center"
           href="https://linkedin.com/in/lewxind"
           target="_blank"
         >
-          <i class="bx bxl-linkedin"></i>
+          <LinkedInIcon
+            class="size-5"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          />
         </a>
         <a
           class="flex h-8 w-8 items-center justify-center"

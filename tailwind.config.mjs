@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: "Geist Sans",
-        mono: "Geist Mono",
+        sans: ["var(--font-geist)"],
+        mono: ["var(--font-geist-mono)"],
       },
     },
   },

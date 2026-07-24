@@ -10,7 +10,6 @@ export default defineConfig({
       name: "Geist",
       cssVariable: "--font-geist",
       styles: ["normal"],
-      weights: ["100 900"],
       fallbacks: ["sans-serif"],
     },
     {
@@ -18,7 +17,6 @@ export default defineConfig({
       name: "Geist Mono",
       cssVariable: "--font-geist-mono",
       styles: ["normal"],
-      weights: ["100 900"],
       fallbacks: ["monospace"],
     },
   ],

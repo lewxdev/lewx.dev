@@ -11,7 +11,8 @@ const entries = await getCollection("blog");
       <>
         <h2>{entry.data.title}</h2>
         <p>{entry.data.date}</p>
-        <p class="mb-2 line-clamp-2">{entry.body?.trim().slice(0, 250)}</p>
+        {/* `glob()` retains Markdown bodies by default, though Content Layer entry types mark them optional. */}
+        <p class="mb-2 line-clamp-2">{entry.body!.trim().slice(0, 250)}</p>
         <a href={`/blog/${entry.id}`}>read more</a>
       </>
     ))

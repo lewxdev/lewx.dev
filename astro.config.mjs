@@ -1,3 +1,5 @@
+// learn more: https://astro.build/config
+
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders } from "astro/config";
 
@@ -8,7 +10,6 @@ export default defineConfig({
       name: "Geist",
       cssVariable: "--font-geist",
       styles: ["normal"],
-      fallbacks: ["sans-serif"],
     },
     {
       provider: fontProviders.fontsource(),

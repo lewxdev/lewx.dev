@@ -15,7 +15,8 @@
     "prebuild": "bun run --sequential check lint",
     "prepare": "bun ./scripts/prepare.sh",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@boxicons/core": "^1.0.6",

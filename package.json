@@ -30,6 +30,7 @@
     "@tailwindcss/typography": "^0.5.20",
     "@typescript-eslint/parser": "^8.65.0",
     "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^3.0.1",
     "husky": "^9.0.11",
     "prettier": "^3.9.6",

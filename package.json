@@ -8,7 +8,7 @@
   "author": "J. Lewis <contact@lewx.dev> (https://lewx.dev)",
   "repository": "github:lewxdev/lewx.dev",
   "scripts": {
-    "prepare": "husky",
+    "prepare": "bun ./scripts/prepare.sh",
     "lint": "eslint .",
     "format": "prettier --write .",
     "dev": "astro dev",
@@ -32,7 +32,6 @@
     "eslint": "^10.8.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^3.0.1",
-    "husky": "^9.0.11",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.1",

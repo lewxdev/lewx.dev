@@ -16,7 +16,7 @@ export default defineConfig([
   },
   {
     files: ["**/*.{ts,cts,mts,tsx}"],
-    ignores: ["**/*.d.ts", "**/*.d.cts", "**/*.d.mts", "**/*.astro/*.ts"],
+    ignores: ["**/*.d.{ts,cts,mts}", "**/*.astro/*.ts"],
     extends: [js.configs.recommended, tseslint.configs.recommended],
   },
   ...astro.configs.recommended,

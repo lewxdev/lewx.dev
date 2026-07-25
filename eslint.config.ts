@@ -11,8 +11,8 @@ const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
 export default defineConfig([
   includeIgnoreFile(gitignorePath, { gitignoreResolution: true }),
   {
-    files: ["**/*.{ts,cts,mts,tsx}"],
-    ignores: ["**/*.d.{ts,cts,mts}", "**/*.astro/*.ts"],
+    files: ["**/*.{ts,tsx}"],
+    ignores: ["**/*.d.ts", "**/*.astro/*.ts"],
     extends: [js.configs.recommended, tseslint.configs.recommended],
   },
   ...astro.configs.recommended,

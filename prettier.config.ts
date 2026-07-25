@@ -1,4 +1,6 @@
-/** @type {import("prettier").Config & import("prettier-plugin-tailwindcss").PluginOptions} */
+import type { Config } from "prettier";
+import type { PluginOptions } from "prettier-plugin-tailwindcss";
+
 export default {
   plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   tailwindStylesheet: "./src/styles/global.css",
@@ -10,4 +12,4 @@ export default {
       },
     },
   ],
-};
+} satisfies Config & PluginOptions;

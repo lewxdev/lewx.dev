@@ -8,13 +8,14 @@
   "author": "J. Lewis <contact@lewx.dev> (https://lewx.dev)",
   "repository": "github:lewxdev/lewx.dev",
   "scripts": {
-    "prepare": "bun ./scripts/prepare.sh",
-    "lint": "eslint .",
-    "format": "prettier --write .",
     "dev": "astro dev",
     "preview": "astro preview",
-    "prebuild": "astro check && bun lint",
-    "build": "astro build"
+    "check": "astro check",
+    "build": "astro build",
+    "prebuild": "bun run --sequential check lint",
+    "prepare": "bun ./scripts/prepare.sh",
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@boxicons/core": "^1.0.6",

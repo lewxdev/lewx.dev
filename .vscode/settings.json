@@ -6,6 +6,7 @@
   "editor.formatOnSave": true,
   "eslint.validate": ["astro", "javascript", "typescript"],
   "explorer.sortOrder": "type",
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
   "prettier.documentSelectors": ["**/*.astro"],
   "prettier.resolveGlobalModules": false
 }

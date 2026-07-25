@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+set -e
+
+staged_files() {
+  git diff --cached --diff-filter=ACMR --name-only -z
+}
+
+staged_files | xargs -0 -r bun run eslint --cache --fix --no-warn-ignored --
+staged_files | xargs -0 -r bun run prettier --cache --ignore-unknown --write --
+staged_files | xargs -0 -r git add --

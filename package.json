@@ -1,6 +1,7 @@
 {
   "name": "lewx.dev",
   "version": "0.1.0",
+  "type": "module",
   "description": "The source code for my personal website",
   "homepage": "https://lewx.dev",
   "license": "MIT",

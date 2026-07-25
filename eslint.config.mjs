@@ -1,10 +1,12 @@
+import { fileURLToPath } from "node:url";
+
 import js from "@eslint/js";
 import parser from "@typescript-eslint/parser";
-import { defineConfig, globalIgnores } from "eslint/config";
+import { defineConfig, includeIgnoreFile } from "eslint/config";
 import astro from "eslint-plugin-astro";
 
 export default defineConfig([
-  globalIgnores(["**/.astro/**", "**/dist/**"]),
+  includeIgnoreFile(fileURLToPath(import.meta.resolve("./.gitignore"))),
   js.configs.recommended,
   {
     files: ["**/*.ts"],

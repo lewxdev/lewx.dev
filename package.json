@@ -12,7 +12,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "build": "astro build",
-    "prebuild": "bun run --sequential check lint",
+    "prebuild": "bun run --parallel check lint",
     "prepare": "bun ./scripts/prepare.sh",
     "lint": "eslint .",
     "format": "prettier --write .",

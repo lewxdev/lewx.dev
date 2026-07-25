@@ -1,10 +1,20 @@
 import js from "@eslint/js";
-import prettier from "eslint-config-prettier";
+import parser from "@typescript-eslint/parser";
+import { defineConfig, globalIgnores } from "eslint/config";
 import astro from "eslint-plugin-astro";
 
-/** @type {import("eslint").Linter.FlatConfig[]} */
-export default [
-  js.configs["recommended"],
-  ...astro.configs["flat/recommended"],
-  prettier,
-];
+export default defineConfig([
+  globalIgnores(["**/.astro/**", "**/dist/**"]),
+  js.configs.recommended,
+  {
+    files: ["**/*.ts"],
+    languageOptions: {
+      parser,
+    },
+    rules: {
+      "no-undef": "off",
+      "no-unused-vars": "off",
+    },
+  },
+  ...astro.configs.recommended,
+]);

@@ -12,7 +12,6 @@ export default defineConfig([
   includeIgnoreFile(gitignorePath, { gitignoreResolution: true }),
   {
     files: ["**/*.{ts,tsx}"],
-    ignores: ["**/*.astro/*.ts"],
     extends: [js.configs.recommended, tseslint.configs.recommended],
   },
   ...astro.configs.recommended,

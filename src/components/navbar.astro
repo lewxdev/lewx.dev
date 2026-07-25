@@ -66,8 +66,9 @@ import SunIcon from "@boxicons/core/svg/basic/bx-sun.svg";
     throw new Error(`missing "#${MOBILE_MENU_ID}" or "#${SIDE_NAV_ID}"`);
 
   const toggleVisibility = () => {
-    sideNav.classList.replace("w-0", "w-dvw") ||
+    if (!sideNav.classList.replace("w-0", "w-dvw")) {
       sideNav.classList.replace("w-dvw", "w-0");
+    }
   };
 
   mobileMenu.addEventListener("click", toggleVisibility);
